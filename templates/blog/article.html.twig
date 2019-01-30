@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block title %}{{article.title }} {% endblock %}
+
+{% block body %}
+        <h1>{{article.title }}</h1>
+        <h2>{{article.created_at|date('Y-m-d') }}</h2>
+        <h2>{{article.number_view }}</h2>
+        <h2>{{article.category }}</h2>
+        <p>{{article.content }}</p>
+        <h2>{{article.author_name }}</h2>
+
+
+
+{% endblock %}
