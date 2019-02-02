@@ -8,14 +8,14 @@
 {% block title %}My cool blog posts{% endblock %}
 
 {% block body %}
-<div class="row">
+<div class="row w-75 m-auto ">
     {% for article in articles %}
-      <div class="col-sm-4">
-        <div class="card">
+    <div class="col-sm-12 d-flex justify-content-center">
+        <div class="card w-100 m-2 blog-post">
           <div class="card-body">
-            <h5 class="card-title">{{ article.title }}</h5>
-            <p class="card-text">{{ article.first_50_char }}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="blog-title">{{ article.title }}</h5>
+            <h6>Posté le {{ article.created_at|date("m/d/Y") }}</h6>
+            <p class="card-text blog-content">{{ article.first_50_char }} <a href="/blog/{{ article.id }}" >( Voir Plus )</a></p>
           </div>
         </div>
       </div>

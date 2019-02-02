@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
@@ -18,11 +19,18 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(
+     * message="Le champs ne peut pas être vide.")
+     * @Assert\Regex(
+     *  pattern = "/[a-zA-Z]/",
+     *  match=true,
+     *  message="Le champs peux contenir que des lettres et doit faire entre 2 et 150")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     private $content;
 
@@ -34,10 +42,11 @@ class Article
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $author_name;
+    private $authorName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $category;
 
@@ -84,14 +93,14 @@ class Article
         return $this;
     }
 
-    public function getAuthor_name(): ?string
+    public function getAuthorName(): ?string
     {
-        return $this->author_name;
+        return $this->authorName;
     }
 
-    public function setAuthor_name(string $author_name): self
+    public function setAuthorName(string $authorName): self
     {
-        $this->author_name = $author_name;
+        $this->authorName = $authorName;
         return $this;
     }
 

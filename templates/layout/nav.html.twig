@@ -1,0 +1,18 @@
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Acceuil <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/articles">Article</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">connection</a>
+      </li>
+      {% if is_granted('ROLE_ADMIN') %}
+        <a class="nav-link" href="/admin/article/add">ajouter</a>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

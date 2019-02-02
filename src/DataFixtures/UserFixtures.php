@@ -6,7 +6,7 @@ namespace App\DataFixtures;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
-use Symfony\Bridge\Doctrine\Tests\Fixtures\User;
+use App\Entity\User;
 
 
 class UserFixtures extends Fixture
@@ -25,9 +25,9 @@ class UserFixtures extends Fixture
 
         $user->setLast_name("mbemba");
         $user->setFirst_name("mbela");
-        $user->setEmail("mbela.mbemba@gmail.com");
-        $user->setUser_name("mbelacat");
-        $user->setRole(["admin"]);
+        $user->setEmail("catteloin@gmail.com");
+        $user->setUser_name("mbelacatcat");
+        $user->setRoles(["admin"]);
         $user->setPassword($this->passwordEncoder->encodePassword(
           $user,
           'the_new_password'

@@ -1,18 +1,24 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
     {{ parent() }}
-
 {% endblock %}
 
-{% block title %}{{article.title }} {% endblock %}
+{% block title %} {{article.title }} {% endblock %}
 
 {% block body %}
-        <h1>{{article.title }}</h1>
-        <h2>{{article.created_at|date('Y-m-d') }}</h2>
-        <h2>{{article.number_view }}</h2>
-        <h2>{{article.category }}</h2>
-        <p>{{article.content }}</p>
-        <h2>{{article.author_name }}</h2>
+
+  <div class="row w-75 m-auto ">
+    <div class="col-sm-12 d-flex justify-content-center">
+        <div class="card w-100 m-2 blog-post">
+          <div class="card-body">
+            <h2 class="blog-title text-center pt-2 pb-5 title-single mb-3">{{ article.title|upper }} </h5>
+            <h6 class="date">Posté le {{ article.created_at|date("d/m/Y") }} par {{article.authorName }} </h6>
+            <div >{{article.category }}</div>
+            <p class="card-text blog-content">{{ article.content }}</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 

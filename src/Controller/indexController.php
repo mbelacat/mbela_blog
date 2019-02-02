@@ -11,7 +11,7 @@ use App\Entity\Article;
 class indexController  extends AbstractController
 {
   /**
-   *@Route("", name="acceuil")
+   *@Route("", name="app_acceuil")
    */
   public function acceuil(){
     $repository = $this->getDoctrine()->getRepository(Article::class);

@@ -78,6 +78,20 @@ class User implements UserInterface
     /**
      * @see UserInterface
      */
+    public function getUser_name(): string
+    {
+        return (string) $this->user_name;
+    }
+
+    public function setUser_name($user_name): self
+    {
+        $this->user_name = $user_name;
+
+        return $this;
+    }
+    /**
+     * @see UserInterface
+     */
     public function getRoles(): array
     {
         $roles = $this->roles;
@@ -126,24 +140,24 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-    public function getFirstName(): ?string
+    public function getFirst_name(): ?string
     {
         return $this->first_name;
     }
 
-    public function setFirstName(string $first_name): self
+    public function setFirst_name(string $first_name): self
     {
         $this->first_name = $first_name;
 
         return $this;
     }
 
-    public function getLastName(): ?string
+    public function getLast_name(): ?string
     {
         return $this->last_name;
     }
 
-    public function setLastName(string $last_name): self
+    public function setLast_name(string $last_name): self
     {
         $this->last_name = $last_name;
 
